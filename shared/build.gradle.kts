@@ -32,6 +32,7 @@ kotlin {
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
             implementation(libs.ktor.client.core)
+            implementation(libs.koin.core)
 
         }
         commonTest.dependencies {
@@ -40,6 +41,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.koin.android)
         }
 
         iosMain.dependencies {
