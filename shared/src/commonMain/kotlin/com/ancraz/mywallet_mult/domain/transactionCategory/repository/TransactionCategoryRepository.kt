@@ -1,4 +1,4 @@
-package com.ancraz.mywallet_mult.domain.wallet.repository
+package com.ancraz.mywallet_mult.domain.transactionCategory.repository
 
 import com.ancraz.mywallet_mult.domain.models.transaction.TransactionCategory
 import com.ancraz.mywallet_mult.domain.models.transaction.TransactionType

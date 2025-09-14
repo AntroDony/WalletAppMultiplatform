@@ -1,4 +1,4 @@
-package com.ancraz.mywallet_mult.domain.wallet.repository
+package com.ancraz.mywallet_mult.domain.transaction.repository
 
 import com.ancraz.mywallet_mult.domain.models.transaction.Transaction
 import kotlinx.coroutines.flow.Flow
