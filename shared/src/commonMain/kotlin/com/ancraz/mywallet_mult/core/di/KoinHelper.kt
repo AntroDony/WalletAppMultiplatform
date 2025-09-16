@@ -17,12 +17,12 @@ fun initKoin(config: KoinAppDeclaration? = null) =
     startKoin {
         config?.invoke(this)
         modules(
-            provideRepositoryModule
+            repositoryModule
         )
     }
 
 
-private val provideRepositoryModule = module {
+val repositoryModule = module {
     singleOf(::WalletRepositoryImpl).bind(WalletRepository::class)
     singleOf(::TransactionRepositoryImpl).bind(TransactionRepository::class)
     singleOf(::CurrencyRatesRepositoryImpl).bind(CurrencyRatesRepository::class)
