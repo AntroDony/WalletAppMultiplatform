@@ -31,8 +31,8 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
-            implementation(libs.ktor.client.core)
-            implementation(libs.koin.core)
+            api(libs.ktor.client.core)
+            api(libs.koin.core)
 
         }
         commonTest.dependencies {
@@ -41,7 +41,8 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.koin.android)
+            //implementation(libs.koin.android)
+            //implementation(libs.koin.androidx.compose)
         }
 
         iosMain.dependencies {
