@@ -1,6 +1,28 @@
 package com.ancraz.mywallet_mult.data.database
 
+import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.ancraz.mywallet_mult.data.database.dao.TransactionCategoryDao
+import com.ancraz.mywallet_mult.data.database.dao.TransactionDao
+import com.ancraz.mywallet_mult.data.database.dao.WalletDao
+import com.ancraz.mywallet_mult.data.database.entity.TransactionCategoryEntity
+import com.ancraz.mywallet_mult.data.database.entity.TransactionEntity
+import com.ancraz.mywallet_mult.data.database.entity.WalletEntity
 
-abstract class WalletDatabase: RoomDatabase() {
+@Database(
+    entities = [
+        WalletEntity::class,
+        TransactionEntity::class,
+        TransactionCategoryEntity::class
+    ],
+    version = 1,
+    exportSchema = false
+)
+abstract class WalletDatabase : RoomDatabase() {
+
+    abstract fun transactionDao(): TransactionDao
+
+    abstract fun walletDao(): WalletDao
+
+    abstract fun transactionCategoryDao(): TransactionCategoryDao
 }
