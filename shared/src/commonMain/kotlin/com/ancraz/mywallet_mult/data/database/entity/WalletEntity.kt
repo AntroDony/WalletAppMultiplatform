@@ -21,17 +21,11 @@ data class WalletEntity(
     val currencyAccountList: List<CurrencyAccountDb>,
 
     @ColumnInfo(name = "wallet_type")
-    val walletType: WalletTypeDb
+    val walletType: String
 ){
 
     data class CurrencyAccountDb(
         val currencyCode: String,
         val balance: Float
     )
-
-
-    data class WalletTypeDb(
-        val name: String
-    )
-
 }
