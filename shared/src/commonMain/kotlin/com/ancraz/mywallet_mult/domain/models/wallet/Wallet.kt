@@ -5,7 +5,7 @@ data class Wallet(
     val name: String,
     val description: String?,
     val walletType: WalletType,
-    val currencyAccounts: List<CurrencyAccount>
+    val currencyAccounts: Set<CurrencyAccount>
 ){
 
     data class CurrencyAccount(

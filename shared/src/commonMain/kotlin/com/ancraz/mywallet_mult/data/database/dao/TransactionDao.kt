@@ -19,20 +19,15 @@ interface TransactionDao {
     @Query("SELECT * FROM transactions WHERE transaction_id = :id")
     suspend fun getTransactionById(id: Long): TransactionEntity
 
-
-    @Query("DELETE FROM transactions WHERE transaction_id = :id")
-    fun deleteTransactionById(id: Long)
-
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTransaction(transaction: TransactionEntity): Long
 
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateTransaction(transaction: TransactionEntity)
+    suspend fun updateTransaction(transaction: TransactionEntity): Long
 
 
     @Delete
-    suspend fun deleteTransaction(transaction: TransactionEntity)
+    suspend fun deleteTransaction(transaction: TransactionEntity): Long
 
 }

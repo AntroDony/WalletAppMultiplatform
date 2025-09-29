@@ -18,7 +18,7 @@ data class WalletEntity(
     val description: String? = null,
 
     @ColumnInfo(name = "currency_accounts")
-    val currencyAccountList: List<CurrencyAccountDb>,
+    val currencyAccountList: Set<CurrencyAccountDb>,
 
     @ColumnInfo(name = "wallet_type")
     val walletType: String
