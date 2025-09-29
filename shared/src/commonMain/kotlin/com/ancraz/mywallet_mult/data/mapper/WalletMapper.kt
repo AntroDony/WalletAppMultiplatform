@@ -10,7 +10,7 @@ class WalletMapper {
         return Wallet(
             id = this.id,
             name = this.name,
-            description = this.description ?: "",
+            description = this.description,
             walletType = this.walletType.toWalletType(),
             currencyAccounts = this.currencyAccountList.map {
                 it.toCurrencyAccount()
@@ -23,7 +23,7 @@ class WalletMapper {
         return WalletEntity(
             id = this.id,
             name = this.name,
-            description = this.description.ifBlank { null },
+            description = this.description,
             walletType = this.walletType.toWalletTypeDb(),
             currencyAccountList = this.currencyAccounts.map {
                 it.toCurrencyAccountDb()

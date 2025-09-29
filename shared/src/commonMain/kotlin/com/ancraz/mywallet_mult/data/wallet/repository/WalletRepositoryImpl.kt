@@ -30,7 +30,7 @@ class WalletRepositoryImpl(
 
     override suspend fun addWallet(wallet: Wallet) {
         mapper.apply {
-            walletDao.addWallet(
+            walletDao.insertWallet(
                 wallet.toWalletEntity()
             )
         }
@@ -47,6 +47,4 @@ class WalletRepositoryImpl(
     override suspend fun deleteWalletById(id: Long) {
         walletDao.deleteWalletById(id)
     }
-
-
 }

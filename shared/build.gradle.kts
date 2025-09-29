@@ -63,6 +63,10 @@ android {
 
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     room {
         schemaDirectory("$projectDir/schemas")
     }

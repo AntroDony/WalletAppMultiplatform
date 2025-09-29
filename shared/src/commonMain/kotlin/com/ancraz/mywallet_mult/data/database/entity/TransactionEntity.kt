@@ -23,6 +23,9 @@ data class TransactionEntity(
     @ColumnInfo(name = "transaction_type")
     val transactionType: TransactionTypeDb,
 
+    @ColumnInfo(name = "transaction_category")
+    val transactionCategoryId: Long,
+
     @ColumnInfo(name = "description")
     val description: String? = null,
 
