@@ -18,6 +18,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+private fun MainActivityScreen(
+    startDestinationRoute
+)
+
 @Preview
 @Composable
 fun AppAndroidPreview() {
