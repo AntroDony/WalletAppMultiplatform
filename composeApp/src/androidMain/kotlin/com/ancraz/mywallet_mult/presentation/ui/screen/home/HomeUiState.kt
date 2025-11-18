@@ -1,6 +1,8 @@
 package com.ancraz.mywallet_mult.presentation.ui.screen.home
 
 import android.os.Parcelable
+import com.ancraz.mywallet_mult.presentation.models.TransactionUi
+import com.ancraz.mywallet_mult.presentation.models.WalletUi
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
