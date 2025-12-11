@@ -3,6 +3,7 @@ package com.ancraz.mywallet_mult.data.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 @Entity(tableName = "categories")
 data class TransactionCategoryEntity(
@@ -21,6 +22,7 @@ data class TransactionCategoryEntity(
     val categoryType: CategoryTransactionType
 ){
 
+    @Serializable
     enum class CategoryTransactionType {
         INCOME, EXPENSE
     }

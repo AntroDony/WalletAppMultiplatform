@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -31,6 +32,19 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
+
+
+//            implementation(compose.runtime)
+//            implementation(compose.foundation)
+//            implementation(compose.material3)
+//            implementation(compose.ui)
+//            implementation(compose.components.resources)
+//            implementation(compose.components.uiToolingPreview)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.kotlin.serialization.json)
+
+
             api(libs.ktor.client.core)
             api(libs.koin.core)
 
@@ -41,8 +55,8 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
-            //implementation(libs.koin.android)
-            //implementation(libs.koin.androidx.compose)
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
         }
 
         iosMain.dependencies {

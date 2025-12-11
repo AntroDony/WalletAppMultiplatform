@@ -14,7 +14,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.TrendingUp
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -36,12 +40,14 @@ import androidx.compose.ui.unit.sp
 import com.ancraz.mywallet_mult.R
 import com.ancraz.mywallet_mult.domain.models.transaction.TransactionType
 import com.ancraz.mywallet_mult.presentation.ui.commonComponents.HorizontalSpacer
+import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeUiEvent
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeUiState
 import com.ancraz.mywallet_mult.presentation.ui.theme.MyWalletTheme
 import com.ancraz.mywallet_mult.presentation.ui.theme.onPrimaryColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.onSecondaryColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.primaryColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.secondaryColor
+import com.ancraz.mywallet_mult.presentation.ui.utils.toFormattedBalanceString
 
 @Composable
 fun TotalBalanceCard(
@@ -103,7 +109,7 @@ fun TotalBalanceCard(
                 )
             } else {
                 Text(
-                    text = if (isPrivateMode) stringResource(R.string.home_card_private_mode_balance) else "\$ ${state.data.balance.toFormattedString()}",
+                    text = if (isPrivateMode) stringResource(R.string.home_card_private_mode_balance) else "\$ ${state.data.balance.toFormattedBalanceString()}",
                     color = onPrimaryColor,
                     fontSize = 40.sp,
                     fontWeight = FontWeight.SemiBold,

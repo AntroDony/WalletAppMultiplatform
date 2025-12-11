@@ -3,6 +3,7 @@ package com.ancraz.mywallet_mult.data.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 @Entity(tableName = "wallets")
 data class WalletEntity(
@@ -24,6 +25,7 @@ data class WalletEntity(
     val walletType: String
 ){
 
+    @Serializable
     data class CurrencyAccountDb(
         val currencyCode: String,
         val balance: Float

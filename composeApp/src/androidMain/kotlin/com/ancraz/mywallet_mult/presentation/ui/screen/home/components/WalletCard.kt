@@ -29,6 +29,8 @@ import com.ancraz.mywallet_mult.presentation.ui.theme.MyWalletTheme
 import com.ancraz.mywallet_mult.presentation.ui.theme.backgroundColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.onBackgroundColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.primaryColor
+import com.ancraz.mywallet_mult.presentation.ui.utils.getTestCurrencyAccountList
+import com.ancraz.mywallet_mult.presentation.ui.utils.icon
 
 @Composable
 fun WalletCard(
@@ -63,7 +65,7 @@ fun WalletCard(
                 horizontalArrangement = Arrangement.Start
             ) {
                 Icon(
-                    imageVector = wallet.walletType.getImageByWalletType(),
+                    imageVector = wallet.walletType.icon(),
                     contentDescription = wallet.walletType.walletName,
                     tint = primaryColor,
                     modifier = Modifier

@@ -17,8 +17,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
+import androidx.compose.material.icons.automirrored.rounded.List
+import androidx.compose.material.icons.outlined.Sync
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,6 +44,7 @@ import com.ancraz.mywallet_mult.presentation.models.TransactionUi
 import com.ancraz.mywallet_mult.presentation.models.WalletUi
 import com.ancraz.mywallet_mult.presentation.ui.commonComponents.CreateWalletButton
 import com.ancraz.mywallet_mult.presentation.ui.commonComponents.HorizontalSpacer
+import com.ancraz.mywallet_mult.presentation.ui.commonComponents.TransactionCard
 import com.ancraz.mywallet_mult.presentation.ui.commonComponents.VerticalSpacer
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.components.TotalBalanceCard
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.components.WalletCard
@@ -47,6 +53,7 @@ import com.ancraz.mywallet_mult.presentation.ui.theme.backgroundColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.onBackgroundColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.onSurfaceColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.screenHorizontalPadding
+import com.ancraz.mywallet_mult.presentation.ui.utils.getTestCurrencyAccountList
 import java.util.Calendar
 
 @Composable
@@ -191,7 +198,7 @@ private fun WalletListContainer(
                 Spacer(modifier = Modifier.width(4.dp))
 
                 Image(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowForwardIos,
+                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                     contentDescription = "All Wallets",
                     colorFilter = ColorFilter.tint(onBackgroundColor),
                     modifier = Modifier
@@ -341,42 +348,42 @@ fun HomeScreenPreview() {
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.EXPENSE,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 1"
                         ),
                         TransactionUi(
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.INCOME,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 2"
                         ),
                         TransactionUi(
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.EXPENSE,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 3"
                         ),
                         TransactionUi(
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.EXPENSE,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 4"
                         ),
                         TransactionUi(
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.EXPENSE,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 5"
                         ),
                         TransactionUi(
                             time = Calendar.getInstance().timeInMillis,
                             value = 200f,
                             type = TransactionType.EXPENSE,
-                            currency = CurrencyCode.USD,
+                            currency = "USD",
                             description = "Transaction 6"
                         ),
                     ),

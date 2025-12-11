@@ -9,7 +9,7 @@ data class WalletUi(
     val id: Long = 0L,
     val name: String,
     val description: String? = null,
-    val accounts: List<CurrencyAccountUi>,
+    val accounts: Set<CurrencyAccountUi>,
     val totalBalance: String,
     val walletType: WalletType
 ): Parcelable {
