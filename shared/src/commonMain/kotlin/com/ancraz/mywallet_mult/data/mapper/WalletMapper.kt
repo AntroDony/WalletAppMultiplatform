@@ -12,9 +12,9 @@ class WalletMapper {
             name = this.name,
             description = this.description,
             walletType = this.walletType.toWalletType(),
-            currencyAccounts = this.currencyAccountList.map {
+            currencyAccounts = this.currencyAccountSet.map {
                 it.toCurrencyAccount()
-            }
+            }.toSet()
         )
     }
 
@@ -25,9 +25,9 @@ class WalletMapper {
             name = this.name,
             description = this.description,
             walletType = this.walletType.toWalletTypeDb(),
-            currencyAccountList = this.currencyAccounts.map {
+            currencyAccountSet = this.currencyAccounts.map {
                 it.toCurrencyAccountDb()
-            }
+            }.toSet()
         )
     }
 

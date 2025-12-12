@@ -3,6 +3,7 @@ package com.ancraz.mywallet_mult.data.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 @Entity(tableName = "transactions")
 data class TransactionEntity(
@@ -33,6 +34,7 @@ data class TransactionEntity(
     val walletId: Long? = null
 
 ){
+    @Serializable
     enum class TransactionTypeDb {
         INCOME,
         EXPENSE

@@ -23,8 +23,11 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "Shared"
+            baseName = "WalletApp"
             isStatic = true
+
+            // Required when using NativeSQLiteDriver
+            linkerOpts.add("-lsqlite3")
         }
     }
     
@@ -56,7 +59,10 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.androidx.activity.compose)
+
+            //implementation(libs.koin.core)
             implementation(libs.koin.android)
+            implementation(libs.koin.compose)
         }
 
         iosMain.dependencies {

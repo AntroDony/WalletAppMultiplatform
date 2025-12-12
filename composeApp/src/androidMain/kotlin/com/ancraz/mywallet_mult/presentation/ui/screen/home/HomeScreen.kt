@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ancraz.mywallet_mult.R
 import com.ancraz.mywallet_mult.domain.models.transaction.TransactionType
@@ -54,13 +55,14 @@ import com.ancraz.mywallet_mult.presentation.ui.theme.onBackgroundColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.onSurfaceColor
 import com.ancraz.mywallet_mult.presentation.ui.theme.screenHorizontalPadding
 import com.ancraz.mywallet_mult.presentation.ui.utils.getTestCurrencyAccountList
+import org.koin.androidx.compose.koinViewModel
 import java.util.Calendar
 
 @Composable
 fun HomeScreen(
     paddingValues: PaddingValues,
     onEvent: (HomeUiEvent) -> Unit,
-    viewModel: HomeViewModel = viewModel()
+    viewModel: HomeViewModel = koinViewModel()
 ) {
     HomeContainer(
         uiState = viewModel.homeUiState.collectAsStateWithLifecycle().value,

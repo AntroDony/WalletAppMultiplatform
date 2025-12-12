@@ -21,7 +21,7 @@ interface WalletDao {
     suspend fun insertWallet(wallet: WalletEntity): Long
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateWallet(wallet: WalletEntity)
+    suspend fun updateWallet(wallet: WalletEntity): Int
 
     @Query("DELETE FROM wallets WHERE wallet_id = :id")
     suspend fun deleteWalletById(id: Long)

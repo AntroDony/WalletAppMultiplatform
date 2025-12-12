@@ -24,10 +24,10 @@ interface TransactionDao {
 
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateTransaction(transaction: TransactionEntity): Long
+    suspend fun updateTransaction(transaction: TransactionEntity): Int
 
 
     @Delete
-    suspend fun deleteTransaction(transaction: TransactionEntity): Long
+    suspend fun deleteTransaction(transaction: TransactionEntity): Int
 
 }

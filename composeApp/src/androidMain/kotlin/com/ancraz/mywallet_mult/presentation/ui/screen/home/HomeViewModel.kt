@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val savedStateHandle: SavedStateHandle,
     //private val getAllTransactionsUseCase: GetAllTransactionsUseCase,
-    private val getAllWalletsUseCase: GetAllWalletsUseCase,
+    private val getAllWalletsUseCase: GetAllWalletsUseCase
     //private val updateCurrencyRatesUseCase: UpdateCurrencyRatesUseCase,
     //private val dataStoreManager: DataStoreManager
 ) : ViewModel() {
@@ -56,6 +56,12 @@ class HomeViewModel(
 //                }
 //            }
         }
+    }
+
+    fun changePrivateMode(isPrivate: Boolean) {
+//        viewModelScope.launch(ioDispatcher) {
+//            dataStoreManager.updatePrivateModeStatus(isPrivate)
+//        }
     }
 
     private fun fetchData() {

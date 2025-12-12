@@ -2,7 +2,6 @@ package com.ancraz.mywallet_mult.data.database.converters
 
 import androidx.room.TypeConverter
 import com.ancraz.mywallet_mult.data.database.entity.TransactionCategoryEntity
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class TransactionCategoryConverter {

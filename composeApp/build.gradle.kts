@@ -24,8 +24,8 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.google.fonts)
 
-            //implementation(libs.koin.compose)
-            //implementation(libs.koin.compose.viewmodel)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
 
             implementation(libs.androidx.navigation3.runtime)
             implementation(libs.androidx.navigation3.ui)
@@ -34,6 +34,8 @@ kotlin {
             implementation("androidx.compose.material:material-icons-extended:1.7.8")
             implementation("io.coil-kt.coil3:coil-compose:3.3.0")
             implementation("io.coil-kt.coil3:coil-svg:3.3.0")
+
+
 
         }
         commonMain.dependencies {
@@ -47,7 +49,8 @@ kotlin {
             //implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(projects.shared)
 
-            //api(libs.koin.core)
+//            implementation(libs.koin.core)
+//            implementation(libs.koin.compose)
 
 
         }
