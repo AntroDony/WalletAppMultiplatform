@@ -7,7 +7,14 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeScreen
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeUiEvent
+import com.ancraz.mywallet_mult.presentation.ui.screen.transaction.createTransaction.CreateTransactionScreen
+import com.ancraz.mywallet_mult.presentation.ui.screen.transaction.createTransaction.CreateTransactionUiEvent
 import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.createWallet.CreateWalletScreen
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.walletInfo.EditWalletScreen
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.walletInfo.WalletInfoScreen
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.walletInfo.WalletInfoUiEvent
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.walletList.WalletListScreen
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.walletList.WalletListUiEvent
 
 @Composable
 fun AppNavigation(
@@ -74,60 +81,60 @@ fun AppNavigation(
                 )
             }
 
-//            entry<NavigationRoute.TransactionInputScreen> { key ->
-//                CreateTransactionScreen(
-//                    transactionType = key.transactionType,
-//                    paddingValues = innerPadding,
-//                    onEvent = { event: CreateTransactionUiEvent ->
-//                        when (event) {
-//                            is CreateTransactionUiEvent.CreateWallet -> {
-//                                backStack.add(
-//                                    NavigationRoute.CreateWalletScreen
-//                                )
-//                            }
-//
-//                            is CreateTransactionUiEvent.GoBack -> {
-//                                backStack.apply {
-//                                    if (this.toList().size == 1) {
-//                                        add(
-//                                            NavigationRoute.HomeScreen
-//                                        )
-//                                        remove(key)
-//                                    } else {
-//                                        removeLastOrNull()
-//                                    }
-//                                }
-//                            }
-//                            else -> Unit
-//                        }
-//                    },
-//                )
-//            }
-//
-//            entry<NavigationRoute.WalletListScreen> {
-//                WalletListScreen(
-//                    paddingValues = innerPadding,
-//                    onEvent = { event: WalletListUiEvent ->
-//                        when (event) {
-//                            is WalletListUiEvent.ShowWalletInfo -> {
-//                                backStack.add(
-//                                    NavigationRoute.WalletInfoScreen(event.wallet.id)
-//                                )
-//                            }
-//
-//                            is WalletListUiEvent.CreateWallet -> {
-//                                backStack.add(
-//                                    NavigationRoute.CreateWalletScreen
-//                                )
-//                            }
-//
-//                            is WalletListUiEvent.GoBack -> {
-//                                backStack.removeLastOrNull()
-//                            }
-//                        }
-//                    }
-//                )
-//            }
+            entry<NavigationRoute.TransactionInputScreen> { key ->
+                CreateTransactionScreen(
+                    transactionType = key.transactionType,
+                    paddingValues = innerPadding,
+                    onEvent = { event: CreateTransactionUiEvent ->
+                        when (event) {
+                            is CreateTransactionUiEvent.CreateWallet -> {
+                                backStack.add(
+                                    NavigationRoute.CreateWalletScreen
+                                )
+                            }
+
+                            is CreateTransactionUiEvent.GoBack -> {
+                                backStack.apply {
+                                    if (this.toList().size == 1) {
+                                        add(
+                                            NavigationRoute.HomeScreen
+                                        )
+                                        remove(key)
+                                    } else {
+                                        removeLastOrNull()
+                                    }
+                                }
+                            }
+                            else -> Unit
+                        }
+                    },
+                )
+            }
+
+            entry<NavigationRoute.WalletListScreen> {
+                WalletListScreen(
+                    paddingValues = innerPadding,
+                    onEvent = { event: WalletListUiEvent ->
+                        when (event) {
+                            is WalletListUiEvent.ShowWalletInfo -> {
+                                backStack.add(
+                                    NavigationRoute.WalletInfoScreen(event.wallet.id)
+                                )
+                            }
+
+                            is WalletListUiEvent.CreateWallet -> {
+                                backStack.add(
+                                    NavigationRoute.CreateWalletScreen
+                                )
+                            }
+
+                            is WalletListUiEvent.GoBack -> {
+                                backStack.removeLastOrNull()
+                            }
+                        }
+                    }
+                )
+            }
 
             entry<NavigationRoute.CreateWalletScreen> {
                 CreateWalletScreen(
@@ -138,36 +145,36 @@ fun AppNavigation(
                 )
             }
 
-//            entry<NavigationRoute.EditWalletScreen> { key ->
-//                EditWalletScreen(
-//                    walletId = key.walletId,
-//                    paddingValues = innerPadding,
-//                    onBack = {
-//                        backStack.removeLastOrNull()
-//                    }
-//                )
-//            }
-//
-//            entry<NavigationRoute.WalletInfoScreen> { key ->
-//                WalletInfoScreen(
-//                    walletId = key.walletId,
-//                    paddingValues = innerPadding,
-//                    onEvent = { event: WalletInfoUiEvent ->
-//                        when (event) {
-//                            is WalletInfoUiEvent.EditWallet -> {
-//                                backStack.add(
-//                                    NavigationRoute.EditWalletScreen(key.walletId)
-//                                )
-//                            }
-//                            is WalletInfoUiEvent.GoBack -> {
-//                                backStack.removeLastOrNull()
-//                            }
-//                            else -> Unit
-//                        }
-//                    }
-//                )
-//            }
-//
+            entry<NavigationRoute.EditWalletScreen> { key ->
+                EditWalletScreen(
+                    walletId = key.walletId,
+                    paddingValues = innerPadding,
+                    onBack = {
+                        backStack.removeLastOrNull()
+                    }
+                )
+            }
+
+            entry<NavigationRoute.WalletInfoScreen> { key ->
+                WalletInfoScreen(
+                    walletId = key.walletId,
+                    paddingValues = innerPadding,
+                    onEvent = { event: WalletInfoUiEvent ->
+                        when (event) {
+                            is WalletInfoUiEvent.EditWallet -> {
+                                backStack.add(
+                                    NavigationRoute.EditWalletScreen(key.walletId)
+                                )
+                            }
+                            is WalletInfoUiEvent.GoBack -> {
+                                backStack.removeLastOrNull()
+                            }
+                            else -> Unit
+                        }
+                    }
+                )
+            }
+
 //            entry<NavigationRoute.TransactionListScreen> {
 //                TransactionListScreen(
 //                    paddingValues = innerPadding,

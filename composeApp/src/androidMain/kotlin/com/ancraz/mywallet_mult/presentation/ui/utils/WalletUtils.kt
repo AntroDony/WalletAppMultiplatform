@@ -29,3 +29,8 @@ internal fun getTestCurrencyAccountList(): List<WalletUi.CurrencyAccountUi> {
         WalletUi.CurrencyAccountUi(currency = "RUB", "2000")
     )
 }
+
+internal fun WalletUi.getWalletCurrenciesString(): String {
+    val currencyList = this.accounts.map { it.currency }
+    return currencyList.joinToString(", ")
+}
