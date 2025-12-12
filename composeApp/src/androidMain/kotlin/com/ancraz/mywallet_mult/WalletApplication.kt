@@ -1,7 +1,7 @@
 package com.ancraz.mywallet_mult
 
 import android.app.Application
-import com.ancraz.mywallet_mult.core.di.homeScreenModule
+import com.ancraz.mywallet_mult.core.di.viewModelModule
 import com.ancraz.mywallet_mult.core.di.initKoin
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,7 +14,7 @@ class WalletApplication: Application() {
         initKoin {
             androidLogger()
             androidContext(this@WalletApplication.applicationContext)
-            modules(homeScreenModule)
+            modules(viewModelModule)
         }
     }
 }

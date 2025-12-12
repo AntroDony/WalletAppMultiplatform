@@ -10,12 +10,13 @@ fun Wallet.toWalletUi(): WalletUi {
         id = this.id,
         name = this.name,
         description = this.description,
-        accounts = this.currencyAccounts.map { account -> account.toAccountUi()}.toSet(),
+        accounts = this.currencyAccounts.map { account -> account.toAccountUi()},
         walletType = this.walletType,
         totalBalance = "${this.getTotalBalance().toFormattedBalanceString()} USD"
     )
 }
 
+//todo check this map for totalBalance
 fun WalletUi.toWallet(): Wallet{
     //val totalBalance = this.accounts.map { it.moneyValue.toBalanceFloatValue() }.sum()
 

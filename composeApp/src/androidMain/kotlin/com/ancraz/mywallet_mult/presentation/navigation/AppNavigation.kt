@@ -7,6 +7,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeScreen
 import com.ancraz.mywallet_mult.presentation.ui.screen.home.HomeUiEvent
+import com.ancraz.mywallet_mult.presentation.ui.screen.wallet.createWallet.CreateWalletScreen
 
 @Composable
 fun AppNavigation(
@@ -127,16 +128,16 @@ fun AppNavigation(
 //                    }
 //                )
 //            }
-//
-//            entry<NavigationRoute.CreateWalletScreen> {
-//                CreateWalletScreen(
-//                    paddingValues = innerPadding,
-//                    onBack = {
-//                        backStack.removeLastOrNull()
-//                    }
-//                )
-//            }
-//
+
+            entry<NavigationRoute.CreateWalletScreen> {
+                CreateWalletScreen(
+                    paddingValues = innerPadding,
+                    onBack = {
+                        backStack.removeLastOrNull()
+                    }
+                )
+            }
+
 //            entry<NavigationRoute.EditWalletScreen> { key ->
 //                EditWalletScreen(
 //                    walletId = key.walletId,

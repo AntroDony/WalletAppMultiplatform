@@ -22,8 +22,8 @@ internal fun WalletType.icon(): ImageVector {
     }
 }
 
-internal fun getTestCurrencyAccountList(): Set<WalletUi.CurrencyAccountUi> {
-    return setOf(
+internal fun getTestCurrencyAccountList(): List<WalletUi.CurrencyAccountUi> {
+    return listOf(
         WalletUi.CurrencyAccountUi(currency = "USD", "2000.00"),
         WalletUi.CurrencyAccountUi(currency = "GEL", "567.20"),
         WalletUi.CurrencyAccountUi(currency = "RUB", "2000")
